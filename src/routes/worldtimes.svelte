@@ -103,7 +103,6 @@
         <polyline fill={hclr} points="40,28 41,28.2 47,28 41,27.8 40,28" transform={`rotate(${mdeg} 40 28)`} />
         <polyline fill="olive" points="40,28 41,28.1 48,28 41,27.9 40,28" transform={`rotate(${sdeg} 40 28)`} />
         <text x="40" y="32" text-anchor="middle" class="text title" fill={hclr}>{tz.name}</text>
-        <text x="40" y="33" text-anchor="middle" class="text" fill={hclr}>{tz.zone}</text>
 
         <animate xlink:href="#zn" attributeName="opacity" from="0.1" to="1" repeatCount="indefinite" dur="1" />
     </svg>
