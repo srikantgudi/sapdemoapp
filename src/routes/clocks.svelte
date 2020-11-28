@@ -18,6 +18,8 @@
     let sdeg = 0;
     let tz = zones['IN'];
 
+    let hclr = 'navy';
+
     const zoneTime = z => new Date().toLocaleString('en-US',{timeZone: z})
 
     $: {
@@ -40,6 +42,16 @@
             sdeg = (se * 6) - 90
             mdeg = (mi * 6 + se / 10) - 90
             hdeg = (hr * 30 + mi / 2) - 90
+
+            if (hr < 6) {
+                hclr = 'darkgrey';
+            } else if (hr < 12) {
+                hclr = 'blue';
+            } else if (hr < 18) {
+                hclr = 'teal';
+            } else {
+                hclr = 'navy';
+            }
         }, 1000)
     }
 </script>
@@ -75,8 +87,8 @@
 
         <!-- clock for the selected zone -->
         <circle r="90" cx="200" cy="250" fill="aliceblue" stroke="blue" stroke-width="2" />
-        <polyline points="200,250 205,255 260,250 205,245 200,250" transform={`rotate(${hdeg} 200 250)`} fill="teal" />
-        <polyline points="200,250 205,254 280,250 205,246 200,250" transform={`rotate(${mdeg} 200 250)`} fill="teal" />
+        <polyline points="200,250 205,255 260,250 205,245 200,250" transform={`rotate(${hdeg} 200 250)`} fill={hclr} />
+        <polyline points="200,250 205,254 280,250 205,246 200,250" transform={`rotate(${mdeg} 200 250)`} fill={hclr} />
         <polyline points="200,250 205,252 280,250 205,248 200,250" transform={`rotate(${sdeg} 200 250)`} fill="brown" />
         <text x="200" y="280" text-anchor="middle" font-size="14" font-weight="600" fill="blue">{tz.name}</text>
 
