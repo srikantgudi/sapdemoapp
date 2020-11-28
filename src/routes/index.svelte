@@ -13,17 +13,6 @@
 		margin: 0 0 1em 0;
 		border-radius: 8px;
 	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
-
 </style>
 
 <svelte:head>

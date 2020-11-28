@@ -1,5 +1,6 @@
 <script>
-	export let segment;
+	// export let segment;
+	let page = 'home';
 </script>
 
 <style>
@@ -28,33 +29,23 @@
 		float: left;
 	}
 
-	[aria-current] {
-		position: relative;
-		display: inline-block;
-	}
-
-	[aria-current]::after {
-		position: absolute;
-		content: '';
-		width: calc(100% - 1em);
-		height: 4px;
-		background-color: rgb(255,62,0);
-		display: block;
-		bottom: 0.5em;
-	}
-
 	a {
 		text-decoration: none;
-		padding: 1em 0.5em;
+		padding: 0 0.5em;
 		display: block;
+	}
+	a.active {
+		background-color: #999999;
+		color: #f9f9f9;
 	}
 </style>
 
 <nav>
 	<h2>Demo Apps</h2>
 	<ul>
-		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
-		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a></li>
-		<li><a aria-current="{segment === 'clocks' ? 'page' : undefined}" href="clocks">clocks</a></li>
+		<li><a on:click={() => page = 'home'} class:active={page === 'home'} href=".">Home</a></li>
+		<li><a on:click={() => page = 'about'} class:active={page === 'about'} href="about">About</a></li>
+		<li><a on:click={() => page = 'worldtimes'} class:active={page === 'worldtimes'} href="worldtimes">World Times</a></li>
+		<li><a on:click={() => page = 'games'} class:active={page === 'games'} href="games">Games</a></li>
 	</ul>
 </nav>
