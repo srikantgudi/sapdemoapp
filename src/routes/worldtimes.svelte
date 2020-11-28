@@ -59,9 +59,6 @@
 </script>
 
 <style>
-    body {
-        overflow: hidden;
-    }
     .text {
         font-size: 0.8px;
         cursor: pointer;
@@ -74,10 +71,13 @@
 
 <main>
     <svg viewBox="0 0 90 40" style="box-shadow: 0 0 2px #999">
-        <text x="50" y="3" text-anchor="middle" font-size="2.5">WORLD TIMES</text>
-        <text x="50" y="5" text-anchor="middle" font-size="1">Click the zone name to view analog clock</text>
+        <text id="title" x="50" y="3" text-anchor="middle" fill="blue" font-weight="600" font-size="2.5">WORLD TIMES</text>
+        <text id="msg" x="50" y="4.5" text-anchor="middle" fill="navy" font-size="1">Click the zone name to view analog clock</text>
 
-        <ellipse fill="lightcyan" stroke="blue" stroke-width="0.2" rx="36" ry="15" cx="50" cy="22" />
+        <animate xlink:href="#title" attributeName="fill" values="blue;lightblue;blue" dur="3s" begin="0" repeatCount="indefinite" />
+        <animate xlink:href="#msg" attributeName="fill" values="lightblue;blue;lightblue" dur="3s" begin="0" repeatCount="indefinite" />
+
+        <ellipse fill="lightcyan" stroke="#09f" stroke-width="0.2" rx="36" ry="15" cx="50" cy="22" />
 
         <text x="25" y="20" text-anchor="middle" class="text title" on:click={() => tz=zones['LA']} fill={zones['LA'].zone===tz.zone ? 'blue' : '#999'}>{zones['LA'].name}</text>
         <text x="25" y="21" text-anchor="middle" class="text">{zones['LA'].ztime}</text>

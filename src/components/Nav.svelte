@@ -46,6 +46,6 @@
 		<li><a on:click={() => page = 'home'} class:active={page === 'home'} href=".">Home</a></li>
 		<li><a on:click={() => page = 'about'} class:active={page === 'about'} href="about">About</a></li>
 		<li><a on:click={() => page = 'worldtimes'} class:active={page === 'worldtimes'} href="worldtimes">World Times</a></li>
-		<li><a on:click={() => page = 'games'} class:active={page === 'games'} href="games">Games</a></li>
+		<!-- <li><a on:click={() => page = 'games'} class:active={page === 'games'} href="games">Games</a></li> -->
 	</ul>
 </nav>
