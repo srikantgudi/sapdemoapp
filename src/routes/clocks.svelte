@@ -47,6 +47,7 @@
 <style>
     .text {
         font-size: 10px;
+        cursor: pointer;
     }
     .text.title {
         font-size: 12px;
